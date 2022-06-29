@@ -1,0 +1,44 @@
+.card {
+  width: 300px;
+  height: 300px;
+  text-align: center;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem;
+  text-decoration-line: none;
+  outline: 1px dashed white;
+  outline-offset: -8px;
+}
+
+.card:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  transform: scale(1.05);
+}
+
+.card__link--img {
+  width: 200px;
+  height: 150px;
+  border-radius: 5%;
+  margin-top: 20px;
+}
+
+.card__link--img:hover {
+  width: 200px;
+  height: 150px;
+  border-radius: 5%;
+  margin-top: 20px;
+  transform: scale(1.20);
+}
+
+h3.card__link--h3 {
+  font-size: 22px;
+  color: white;
+}
+
+h5.card__link--h5 {
+  font-size: 17px;
+  color: white;
+}

@@ -1,0 +1,22 @@
+ul.pagination {
+  list-style: none;
+  text-align: center;
+
+}
+
+li.pagination__ul {
+  text-align: center;
+}
+
+button.pagination__ul--btn {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-family: "Macondo";
+  font-size: 18px;
+}
+
+button.pagination__ul--btn:hover {
+  transform: scale(1.10);
+  background-color: white;
+  color: rgba(0, 0, 0, 0.8);
+}

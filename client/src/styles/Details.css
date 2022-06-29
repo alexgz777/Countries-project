@@ -1,0 +1,94 @@
+div.container{
+  text-align: center;
+}
+
+div.details {
+  text-align: center;
+  height: 1000px;
+  margin-left: 500px;
+  margin-right: 500px;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+img.details__img {
+  margin-top: 50px;
+  width: 400px;
+  height: 200px;
+  border-radius: 5px;
+}
+
+h2.details__name {
+  font-weight: bolder;
+
+  font-size: 45px;
+}
+
+h4.details__data {
+  font-weight: bolder;
+
+  font-size: 25px;
+}
+
+p.details__loading {
+  font-size: 50px;
+  text-align: center;
+  justify-content: center;
+}
+
+button.button__activity {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+
+  font-size: 20px;
+  border-radius: 10px;
+
+  width: 250px;
+  height: 60px;
+}
+button.button__activity:hover {
+  background-color: white;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+  border-radius: 10px;
+
+  width: 250px;
+  height: 60px;
+}
+
+button.button__back {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+
+  font-size: 20px;
+  border-radius: 10px;
+
+  width: 180px;
+  height: 60px;
+  margin-left: 40px;
+}
+
+button.button__back:hover {
+  background-color: white;
+  color: rgba(0, 0, 0, 0.5);
+
+  font-size: 20px;
+  border-radius: 10px;
+
+  width: 180px;
+  height: 60px;
+  margin-left: 40px;
+}
+
+h2.activities__title{
+  font-weight: bold;
+font-size: 30px;
+}
+
+.separator{
+  border-top: 1px solid black;
+  height: 2px;
+  max-width: 200px;
+  padding: 0;
+  margin: 20px auto 0 auto;
+}

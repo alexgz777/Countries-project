@@ -1,0 +1,46 @@
+div.landing {
+  top: 15rem;
+  left: 40rem;
+
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  text-align: center;
+}
+
+h1.text {
+  font-size: 50px;
+  color: #1b1b1b;
+  text-align: center;
+}
+
+button.landing__link {
+  width: 300px;
+  height: 70px;
+
+  border-radius: 5px;
+  border: none;
+
+  font-size: 25px;
+  font-family: "Macondo";
+
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  text-align: center;
+}
+
+button.landing__link:hover {
+  width: 300px;
+  height: 70px;
+
+  border-radius: 5px;
+  border: none;
+
+  font-size: 25px;
+
+  color: black;
+  background-color: rgba(255, 255, 255, 0.5);
+
+  text-align: center;
+}

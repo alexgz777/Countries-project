@@ -1,0 +1,78 @@
+form.create {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+
+  margin-top: 5rem;
+  margin-left: 40rem;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  font-size: 40px;
+  color: white;
+  border-radius: 10px;
+
+  width: 500px;
+  height: 600px;
+  padding: 40px;
+}
+
+input.create__input {
+  background-color: rgba(0, 0, 0, 0.5);
+
+  font-size: 20px;
+  color: white;
+  border-radius: 10px;
+
+  width: 250px;
+  height: 30px;
+}
+
+select.create__select {
+  background-color: rgba(0, 0, 0, 0.5);
+
+  font-size: 20px;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+
+  width: 250px;
+  height: 30px;
+}
+
+button.create__button {
+  margin-top: 1rem;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  font-size: 20px;
+  color: white;
+  border-radius: 10px;
+
+  width: 250px;
+  height: 60px;
+}
+
+button.create__button:hover {
+  margin-top: 1rem;
+
+  background-color: white;
+
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+
+  width: 250px;
+  height: 60px;
+}
+
+ul.countriesSelected {
+  list-style: none;
+}
+
+li.countriesSelected__list {
+  font-size: 25px;
+}
