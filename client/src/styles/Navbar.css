@@ -1,4 +1,4 @@
-ul.navbar {
+.navbar {
   margin-top: 0;
   margin-left: 0;
   list-style: none;
@@ -6,25 +6,11 @@ ul.navbar {
   height: 60px;
 }
 
-li.navbar__ul {
+.navbar__ul {
   display: flex;
-  justify-content: left;
 }
 
-a.navbar__ul--li {
-  margin-left: 35px;
-  margin-right: 35px;
-
-  width: 220px;
-  height: 60px;
-}
-/* /////////////////////////////////////////////// */
-form.searchbar {
-  margin-left: 80px;
-  margin-right: 35px;
-}
-
-button.navbar__ul--li--button {
+.navbar__ul--li--button {
   margin-top: 0;
   margin-left: 35px;
   margin-right: 35px;
@@ -43,7 +29,7 @@ button.navbar__ul--li--button {
   height: 60px;
 }
 
-button.navbar__ul--li--button:hover {
+.navbar__ul--li--button:hover {
   margin-top: 0;
   margin-left: 35px;
   margin-right: 35px;
@@ -60,7 +46,7 @@ button.navbar__ul--li--button:hover {
   height: 60px;
 }
 
-img.logo {
+.logo {
   margin-top: -1px;
   margin-left: -6px;
   width: 220px;
@@ -70,7 +56,7 @@ img.logo {
   border: none;
 }
 
-img.logo:hover {
+.logo:hover {
   background-image: none;
   width: 220px;
   height: 60px;

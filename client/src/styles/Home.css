@@ -1,29 +1,30 @@
-
-div.cards {
+.cards {
   display: grid;
+  place-items: center;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: auto;
   grid-gap: 2.5rem;
 
-  margin-left: 320px;
-  margin-right: 280px;
+/*   margin-left: 320px;
+  margin-right: 280px; */
   text-align: center;
-
 }
-
-div.filterOrder {
+.container{
+  display:grid ;
+  place-items: center;
+}
+.filterOrder {
   text-align: center;
   color: black;
   font-size: 28px;
   background-color: antiquewhite;
 
-  margin-left: 230px;
   width: 1300px;
   height: 40px;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
-label.filterOrder__label {
+.filterOrder__label {
   font-size: 20px;
   font-weight: bolder;
   margin-right: 10px;
@@ -32,7 +33,7 @@ label.filterOrder__label {
   height: 30px;
 }
 
-select.filterOrder__select {
+.filterOrder__select {
   background-color: rgba(0, 0, 0, 0.5);
   font-family: "Macondo";
 
@@ -46,13 +47,13 @@ select.filterOrder__select {
   width: 150px;
   height: 30px;
 }
-select.filterOrder__select:hover {
+.filterOrder__select:hover {
   transform: scale(1.05);
 }
 
-button.button__reload {
-    margin-top: 1rem;
-
+.button__reload {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   background-color: rgba(0, 0, 0, 0.5);
 
   font-size: 20px;
@@ -62,8 +63,8 @@ button.button__reload {
   width: 100px;
   height: 50px;
 }
-button.button__reload:hover {
-    margin-top: 1rem;
+.button__reload:hover {
+  margin-top: 1rem;
 
   background-color: white;
 

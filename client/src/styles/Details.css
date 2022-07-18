@@ -1,10 +1,10 @@
-div.container{
+div.container {
   text-align: center;
 }
 
 div.details {
   text-align: center;
-  height: 1000px;
+  height: fit-content;/* 55em; */
   margin-left: 500px;
   margin-right: 500px;
   border-radius: 25px;
@@ -20,13 +20,11 @@ img.details__img {
 
 h2.details__name {
   font-weight: bolder;
-
   font-size: 45px;
 }
 
 h4.details__data {
   font-weight: bolder;
-
   font-size: 25px;
 }
 
@@ -42,7 +40,6 @@ button.button__activity {
 
   font-size: 20px;
   border-radius: 10px;
-
   width: 250px;
   height: 60px;
 }
@@ -62,30 +59,28 @@ button.button__back {
 
   font-size: 20px;
   border-radius: 10px;
-
   width: 180px;
   height: 60px;
   margin-left: 40px;
 }
 
-button.button__back:hover {
+.button__back:hover {
   background-color: white;
   color: rgba(0, 0, 0, 0.5);
 
   font-size: 20px;
   border-radius: 10px;
-
   width: 180px;
   height: 60px;
   margin-left: 40px;
 }
 
-h2.activities__title{
+h2.activities__title {
   font-weight: bold;
-font-size: 30px;
+  font-size: 30px;
 }
 
-.separator{
+.separator {
   border-top: 1px solid black;
   height: 2px;
   max-width: 200px;

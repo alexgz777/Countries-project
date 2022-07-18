@@ -1,6 +1,7 @@
+import { useEffect } from "react";
 import { React, useState } from "react";
 import { useDispatch } from "react-redux";
-import { searchCountry } from "../redux/actions";
+import { reset, searchCountry } from "../redux/actions";
 import "../styles/Searchbar.css";
 
 const Searchbar = () => {
@@ -8,14 +9,15 @@ const Searchbar = () => {
   const [country, setCountry] = useState("");
 
   const handleInput = (e) => {
-    e.preventDefault();
     setCountry(e.target.value);
   };
   const handleSearch = (e) => {
     e.preventDefault();
     dispatch(searchCountry(country));
   };
-
+  useEffect(() => {
+    dispatch(reset());
+  }, [dispatch]);
   return (
     <form className="searchbar">
       <input

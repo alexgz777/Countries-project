@@ -1,5 +1,7 @@
 const initialState = {
   country: [],
+  details: [],
+  filters: [],
   activity: [],
 };
 
@@ -12,6 +14,8 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         country: action.payload,
+        countryFilter: action.payload,
+        filters: action.payload,
       };
 
     case "CREATE_ACTIVITY":
@@ -31,6 +35,7 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         country: action.payload,
+        details: action.payload,
       };
 
     case "GET_ACTIVITIES":
@@ -38,42 +43,24 @@ function rootReducer(state = initialState, action) {
         ...state,
         activity: action.payload,
       };
-    ////////////////////////////////////////////////////////////////
+
     case "FILTER_BY_ACTIVITY":
       let filterActivity = country.filter((e) => action.payload === e.name);
-      console.log(action.payload);
-      console.log(filterActivity);
-
       return {
         ...state,
         country: filterActivity,
       };
-
     case "FILTER_BY_CONTINENT":
       let filterContinent;
-      country = state.country;
-      switch (action.payload) {
-        case "Americas":
-          filterContinent = country.filter((e) => e.continent === "Americas");
-          break;
-        case "Asia":
-          filterContinent = country.filter((e) => e.continent === "Asia");
-          break;
-        case "Africa":
-          filterContinent = country.filter((e) => e.continent === "Africa");
-          break;
-        case "Europe":
-          filterContinent = country.filter((e) => e.continent === "Europe");
-          break;
-        case "Oceania":
-          filterContinent = country.filter((e) => e.continent === "Oceania");
-          break;
-        case "Antarctic":
-          filterContinent = country.filter((e) => e.continent === "Antarctic");
-          break;
-        default:
-          filterContinent = country;
-      }
+
+      let filterCountry = state.country.filter(
+        (i) => i.continent === action.payload
+      );
+      let filterfilter = state.filters.filter(
+        (i) => i.continent === action.payload
+      );
+      if (filterCountry.length === 0) filterContinent = filterfilter;
+      else filterContinent = filterCountry;
       return {
         ...state,
         country: filterContinent,
@@ -113,7 +100,12 @@ function rootReducer(state = initialState, action) {
         ...state,
         country: orderedCountries,
       };
-
+    case "RESET":
+      return {
+        ...state,
+        country: [],
+        details: [],
+      };
     default:
       return state;
   }

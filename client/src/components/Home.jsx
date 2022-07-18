@@ -20,7 +20,6 @@ export default function Home() {
   const activity = useSelector((state) => state.activity);
   const [Order, setOrder] = useState("");
 
-  //filter & order//
   function handleClick(e) {
     e.preventDefault();
     dispatch(getCountries());
@@ -53,7 +52,6 @@ export default function Home() {
     dispatch(getActivities());
   }, [dispatch]);
 
-  //pagination//
   const [currentPage, setCurrentPage] = useState(1);
   const [countriesPerPage, setCoutriesPerPage] = useState(9);
 
@@ -88,7 +86,7 @@ export default function Home() {
           className="filterOrder__select"
           onChange={(e) => handleFilterContinent(e)}
         >
-          <option value="--">--</option>
+          <option value="all">--</option>
           <option value="Americas">Americas</option>
           <option value="Asia">Asia</option>
           <option value="Africa">Africa</option>
@@ -123,6 +121,15 @@ export default function Home() {
         country={country.length}
         pages={pages}
       />
+
+      <button
+        className="button__reload"
+        onClick={(e) => {
+          handleClick(e);
+        }}
+      >
+        Reload
+      </button>
 
       <div className="cards">
         {currentCountries?.map((e) => {

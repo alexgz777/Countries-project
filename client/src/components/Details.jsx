@@ -1,27 +1,20 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
-import { getCountry, getActivities } from "../redux/actions";
+import { getCountry, reset } from "../redux/actions";
 import "../styles/Details.css";
 
 function Details() {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const country = useSelector((state) => state.country);
+  const country = useSelector((state) => state.details);
   const activity = useSelector((state) => state.activity);
 
   useEffect(() => {
     dispatch(getCountry(id));
-  }, []);
+    dispatch(reset());
+  }, [dispatch]);
 
-  /*   function handleClick(e) {
-    e.preventDefault();
-    dispatch(getActivities());
-  } */
-  useEffect(() => {
-    dispatch(getActivities());
-  }, []);
-  
   return (
     <>
       <Link className="button__link" to="/home">
@@ -42,16 +35,8 @@ function Details() {
               <h4 className="details__data">{`Subregion: ${country[0].subregion}`}</h4>
               <h4 className="details__data">{`Area: ${country[0].area}`}</h4>
               <h4 className="details__data">{`Population: ${country[0].population}`}</h4>
-              <div className="activity">
-                <button
-                  className="button__activity"
-                  onClick={(e) => {
-                    handleClick(e);
-                  }}
-                >
-                  See activities
-                </button>
 
+              <div className="activity">
                 {activity.length ? (
                   <div>
                     <div className="activities">
@@ -66,7 +51,7 @@ function Details() {
                   </div>
                 ) : (
                   <p className="activities__loading">
-                    This country hasn't registered activities
+                    The country has not registered activities
                   </p>
                 )}
               </div>

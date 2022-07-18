@@ -48,11 +48,12 @@ export function getActivities() {
 export function createActivity(payload) {
   return async (dispatch) => {
     const created = await axios.post(`http://localhost:3001/activity`, payload);
-    console.log(created);
-    return created;
+    dispatch({
+      type: "CREATE_ACTIVITY",
+      payload: created,
+    });
   };
 }
-//////////////////////////////////////////////
 export function filterByActivity(payload) {
   return {
     type: "FILTER_BY_ACTIVITY",
@@ -77,6 +78,13 @@ export function orderByAlpha(payload) {
 export function orderByPopulation(payload) {
   return {
     type: "ORDER_BY_POPULATION",
+    payload,
+  };
+}
+
+export function reset(payload) {
+  return {
+    type: "RESET",
     payload,
   };
 }

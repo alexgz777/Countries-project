@@ -7,7 +7,6 @@ function CreateActivity() {
   const country = useSelector((state) => state.country);
   const dispatch = useDispatch();
 
-  //////////////////////////////////////////////////////
   const initialState = {
     name: "",
     difficulty: "",
@@ -25,27 +24,26 @@ function CreateActivity() {
       [e.target.name]: e.target.value,
     });
   };
-  ////////////////////////////////////////////////////////
   const [error, setError] = useState({});
 
   const handleValidate = (inputs) => {
     const errors = {};
-    if (!inputs.name) {
+    if (!inputs.name.length) {
       errors.name = "Should write an name of activity";
-    } else if (inputs.name.typeOf(!"string")) {
+    } /* else if (inputs.name.typeOf(!"string")) {
       errors.name = "Write a valid name of activity";
-    }
+    } */
 
     if (!inputs.duration) {
       errors.duration = "Should write duration of activity";
-    } else if (inputs.name.typeOf(!"number")) {
+    } /* else if (inputs.duration.typeOf(!"number")) {
       errors.name = "Write a valid name of activity";
-    } else if (inputs.duration > 24) {
+    } */ else if (inputs.duration > 24) {
       errors.duration = "The activity must have less the 24 hours";
     }
     return errors;
   };
-  ////////////////////////////////////////////////////////
+
   const handleSelect = (e) => {
     setForm({
       ...form,
@@ -53,8 +51,8 @@ function CreateActivity() {
     });
   };
 
-  const [isSumbit, setIsSumbit] = useState(false);
-
+/*   const [isSumbit, setIsSumbit] = useState(false);
+ */
   const handleOnSubmit = (e) => {
     e.preventDefault();
     setError(handleValidate(form));
@@ -65,11 +63,11 @@ function CreateActivity() {
     setForm(initialState);
   };
 
-  useEffect(() => {
+ /*  useEffect(() => {
     if (Object.keys(form).length === 0 && isSumbit) {
       //
     }
-  }, [error]);
+  }, [error]); */
 
   useEffect(() => {
     dispatch(getCountries());
@@ -83,6 +81,7 @@ function CreateActivity() {
         value={form.name}
         name="name"
         type="input"
+        placeholder="write the name"
         onChange={(e) => handleOnChange(e)}
       />
       <p>{error.name}</p>
@@ -93,7 +92,7 @@ function CreateActivity() {
         name="difficulty"
         onChange={(e) => handleOnChange(e)}
       >
-        <option value={"--"}>--</option>
+        <option value={"--"}>choose difficulty</option>
         <option value={"1"}>1</option>
         <option value={"2"}>2</option>
         <option value={"3"}>3</option>
@@ -117,7 +116,7 @@ function CreateActivity() {
         name="season"
         onChange={(e) => handleOnChange(e)}
       >
-        <option value={"--"}>--</option>
+        <option value={"--"}>choose in which season..</option>
         <option value="Summer">Summer</option>
         <option value="Autumn">Autumn</option>
         <option value="Winter">Winter</option>
@@ -126,7 +125,7 @@ function CreateActivity() {
 
       <label>Country/countries:</label>
       <select className="create__select" onChange={(e) => handleSelect(e)}>
-        <option value={"--"}>--</option>
+        <option value={"--"}>choose where to do it..</option>
         {country?.map((e) => {
           return (
             <option key={e.id} value={e.name}>
