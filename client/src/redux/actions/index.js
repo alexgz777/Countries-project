@@ -3,7 +3,7 @@ import axios from "axios";
 export function getCountries() {
   return async function (dispatch) {
     try {
-      const request = await axios.get("http://localhost:3001/countries");
+      const request = await axios.get("/countries");
       return dispatch({
         type: "GET_COUNTRIES",
         payload: request.data,
@@ -16,7 +16,7 @@ export function getCountries() {
 
 export function getCountry(id) {
   return async function (dispatch) {
-    const request = await axios.get(`http://localhost:3001/countries/${id}`);
+    const request = await axios.get(`/countries/${id}`);
     return dispatch({
       type: "GET_COUNTRY",
       payload: request.data,
@@ -34,7 +34,7 @@ export function searchCountry(name) {
 export function getActivities() {
   return async (dispatch) => {
     try {
-      const request = await axios.get("http://localhost:3001/activity");
+      const request = await axios.get("/activity");
       return dispatch({
         type: "GET_ACTIVITIES",
         payload: request.data,
@@ -47,7 +47,7 @@ export function getActivities() {
 
 export function createActivity(payload) {
   return async (dispatch) => {
-    const created = await axios.post(`http://localhost:3001/activity`, payload);
+    const created = await axios.post(`/activity`, payload);
     dispatch({
       type: "CREATE_ACTIVITY",
       payload: created,
