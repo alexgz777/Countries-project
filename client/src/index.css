@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Macondo&family=Rubik&display=swap");
 
 body {
+  zoom: 90%;
   margin: 0;
   background: url("https://cdn.wallpapersafari.com/83/86/iBwubk.jpg");
   font-family: "Macondo", cursive, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
@@ -8,6 +9,5 @@ body {
 }
 
 code {
-  font-family: "Macondo", cursive, "Courier New",
-    monospace;
+  font-family: "Macondo", cursive, "Courier New", monospace;
 }
